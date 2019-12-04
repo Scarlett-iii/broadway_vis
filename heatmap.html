@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Embedding Vega-Lite</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.8.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.0-beta.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.1.0"></script>
+  </head>
+  <body>
+    <div id="vis"></div>
+
+    <script type="text/javascript">
+      var yourVlSpec = {
+  $schema: 'https://vega.github.io/schema/vega-lite/v3.json',
+         
+  width: 800,
+  height: 400,
+  data: {
+    values:[
+  {
+    "Month": "August",
+    "Year": 2018,
+    "Gross": 69996483
+  },
+  {
+    "Month": "July",
+    "Year": 2018,
+    "Gross": 115509821
+  },
+  {
+    "Month": "June",
+    "Year": 2018,
+    "Gross": 81243151
+  },
+  {
+    "Month": "May",
+    "Year": 2018,
+    "Gross": 118454667
+  },
+  {
+    "Month": "April",
+    "Year": 2018,
+    "Gross": 111943518
+  },
+  {
+    "Month": "March",
+    "Year": 2018,
+    "Gross": 68393567
+  },
+  {
+    "Month": "February",
+    "Year": 2018,
+    "Gross": 54410455
+  },
+  {
+    "Month": "January",
+    "Year": 2018,
+    "Gross": 89953340
+  },
+  {
+    "Month": "December",
+    "Year": 2017,
+    "Gross": 7035240
+  },
+  {
+    "Month": "November",
+    "Year": 2017,
+    "Gross": 7385795
+  },
+  {
+    "Month": "October",
+    "Year": 2017,
+    "Gross": 12304311
+  },
+  {
+    "Month": "September",
+    "Year": 2017,
+    "Gross": 6446549
+  },
+  {
+    "Month": "August",
+    "Year": 2017,
+    "Gross": 15823369
+  },
+  {
+    "Month": "July",
+    "Year": 2017,
+    "Gross": 17744854
+  },
+  {
+    "Month": "June",
+    "Year": 2017,
+    "Gross": 19647299
+  },
+  {
+    "Month": "May",
+    "Year": 2017,
+    "Gross": 30969663
+  },
+  {
+    "Month": "April",
+    "Year": 2017,
+    "Gross": 34477117
+  },
+  {
+    "Month": "March",
+    "Year": 2017,
+    "Gross": 19922490
+  },
+  {
+    "Month": "February",
+    "Year": 2017,
+    "Gross": 16520120
+  },
+  {
+    "Month": "January",
+    "Year": 2017,
+    "Gross": 23243282
+  },
+  {
+    "Month": "December",
+    "Year": 2016,
+    "Gross": 1239146
+  },
+  {
+    "Month": "November",
+    "Year": 2016,
+    "Gross": 5229312
+  },
+  {
+    "Month": "October",
+    "Year": 2016,
+    "Gross": 7442582
+  },
+  {
+    "Month": "September",
+    "Year": 2016,
+    "Gross": 3007569
+  },
+  {
+    "Month": "August",
+    "Year": 2016,
+    "Gross": 10115799
+  },
+  {
+    "Month": "July",
+    "Year": 2016,
+    "Gross": 15180453
+  },
+  {
+    "Month": "June",
+    "Year": 2016,
+    "Gross": 16105804
+  },
+  {
+    "Month": "May",
+    "Year": 2016,
+    "Gross": 26843709
+  },
+  {
+    "Month": "April",
+    "Year": 2016,
+    "Gross": 17996448
+  },
+  {
+    "Month": "March",
+    "Year": 2016,
+    "Gross": 24146926
+  },
+  {
+    "Month": "February",
+    "Year": 2016,
+    "Gross": 20026544
+  },
+  {
+    "Month": "January",
+    "Year": 2016,
+    "Gross": 22143855
+  },
+  {
+    "Month": "December",
+    "Year": 2015,
+    "Gross": 568868
+  },
+  {
+    "Month": "November",
+    "Year": 2015,
+    "Gross": 3406240
+  },
+  {
+    "Month": "October",
+    "Year": 2015,
+    "Gross": 4313144
+  },
+  {
+    "Month": "September",
+    "Year": 2015,
+    "Gross": 3462714
+  },
+  {
+    "Month": "August",
+    "Year": 2015,
+    "Gross": 7935791
+  },
+  {
+    "Month": "July",
+    "Year": 2015,
+    "Gross": 9977735
+  },
+  {
+    "Month": "June",
+    "Year": 2015,
+    "Gross": 19898572
+  },
+  {
+    "Month": "May",
+    "Year": 2015,
+    "Gross": 23751941
+  },
+  {
+    "Month": "April",
+    "Year": 2015,
+    "Gross": 17419850
+  },
+  {
+    "Month": "March",
+    "Year": 2015,
+    "Gross": 26768043
+  },
+  {
+    "Month": "February",
+    "Year": 2015,
+    "Gross": 18087129
+  },
+  {
+    "Month": "January",
+    "Year": 2015,
+    "Gross": 17667911
+  },
+  {
+    "Month": "December",
+    "Year": 2014,
+    "Gross": 684397
+  },
+  {
+    "Month": "November",
+    "Year": 2014,
+    "Gross": 2617044
+  },
+  {
+    "Month": "October",
+    "Year": 2014,
+    "Gross": 2919215
+  },
+  {
+    "Month": "September",
+    "Year": 2014,
+    "Gross": 3030731
+  },
+  {
+    "Month": "August",
+    "Year": 2014,
+    "Gross": 5558383
+  },
+  {
+    "Month": "July",
+    "Year": 2014,
+    "Gross": 13729010
+  },
+  {
+    "Month": "June",
+    "Year": 2014,
+    "Gross": 24127708
+  },
+  {
+    "Month": "May",
+    "Year": 2014,
+    "Gross": 18465873
+  },
+  {
+    "Month": "April",
+    "Year": 2014,
+    "Gross": 27082690
+  },
+  {
+    "Month": "March",
+    "Year": 2014,
+    "Gross": 22671590
+  },
+  {
+    "Month": "February",
+    "Year": 2014,
+    "Gross": 9698109
+  },
+  {
+    "Month": "January",
+    "Year": 2014,
+    "Gross": 8097327
+  },
+  {
+    "Month": "December",
+    "Year": 2013,
+    "Gross": 4674223
+  },
+  {
+    "Month": "November",
+    "Year": 2013,
+    "Gross": 7450251
+  },
+  {
+    "Month": "October",
+    "Year": 2013,
+    "Gross": 8734886
+  },
+  {
+    "Month": "September",
+    "Year": 2013,
+    "Gross": 5831123
+  },
+  {
+    "Month": "August",
+    "Year": 2013,
+    "Gross": 3798795
+  },
+  {
+    "Month": "July",
+    "Year": 2013,
+    "Gross": 7565529
+  },
+  {
+    "Month": "June",
+    "Year": 2013,
+    "Gross": 13333212
+  },
+  {
+    "Month": "May",
+    "Year": 2013,
+    "Gross": 11299713
+  },
+  {
+    "Month": "April",
+    "Year": 2013,
+    "Gross": 19393447
+  },
+  {
+    "Month": "March",
+    "Year": 2013,
+    "Gross": 14312704
+  },
+  {
+    "Month": "February",
+    "Year": 2013,
+    "Gross": 9355385
+  },
+  {
+    "Month": "January",
+    "Year": 2013,
+    "Gross": 19076827
+  },
+  {
+    "Month": "December",
+    "Year": 2012,
+    "Gross": 11082203
+  },
+  {
+    "Month": "November",
+    "Year": 2012,
+    "Gross": 6978115
+  },
+  {
+    "Month": "October",
+    "Year": 2012,
+    "Gross": 5103151
+  },
+  {
+    "Month": "September",
+    "Year": 2012,
+    "Gross": 3964461
+  },
+  {
+    "Month": "August",
+    "Year": 2012,
+    "Gross": 7950364
+  },
+  {
+    "Month": "July",
+    "Year": 2012,
+    "Gross": 17886392
+  },
+  {
+    "Month": "June",
+    "Year": 2012,
+    "Gross": 16682516
+  },
+  {
+    "Month": "May",
+    "Year": 2012,
+    "Gross": 30053973
+  },
+  {
+    "Month": "April",
+    "Year": 2012,
+    "Gross": 31364299
+  },
+  {
+    "Month": "March",
+    "Year": 2012,
+    "Gross": 15955801
+  },
+  {
+    "Month": "February",
+    "Year": 2012,
+    "Gross": 15623299
+  },
+  {
+    "Month": "January",
+    "Year": 2012,
+    "Gross": 26002367
+  },
+  {
+    "Month": "December",
+    "Year": 2011,
+    "Gross": 1217727
+  },
+  {
+    "Month": "November",
+    "Year": 2011,
+    "Gross": 2378141
+  },
+  {
+    "Month": "October",
+    "Year": 2011,
+    "Gross": 1287345
+  },
+  {
+    "Month": "September",
+    "Year": 2011,
+    "Gross": 442226
+  },
+  {
+    "Month": "August",
+    "Year": 2011,
+    "Gross": 5033935
+  },
+  {
+    "Month": "July",
+    "Year": 2011,
+    "Gross": 8066000
+  },
+  {
+    "Month": "June",
+    "Year": 2011,
+    "Gross": 10363484
+  },
+  {
+    "Month": "May",
+    "Year": 2011,
+    "Gross": 20469639
+  },
+  {
+    "Month": "April",
+    "Year": 2011,
+    "Gross": 17331135
+  },
+  {
+    "Month": "March",
+    "Year": 2011,
+    "Gross": 18645603
+  },
+  {
+    "Month": "February",
+    "Year": 2011,
+    "Gross": 16662530
+  },
+  {
+    "Month": "January",
+    "Year": 2011,
+    "Gross": 11757067
+  },
+  {
+    "Month": "December",
+    "Year": 2010,
+    "Gross": 1063428
+  },
+  {
+    "Month": "November",
+    "Year": 2010,
+    "Gross": 4704906
+  },
+  {
+    "Month": "October",
+    "Year": 2010,
+    "Gross": 4596419
+  },
+  {
+    "Month": "September",
+    "Year": 2010,
+    "Gross": 1183970
+  },
+  {
+    "Month": "August",
+    "Year": 2010,
+    "Gross": 4099776
+  },
+  {
+    "Month": "July",
+    "Year": 2010,
+    "Gross": 5491094
+  },
+  {
+    "Month": "June",
+    "Year": 2010,
+    "Gross": 13110820
+  },
+  {
+    "Month": "May",
+    "Year": 2010,
+    "Gross": 15417347
+  },
+  {
+    "Month": "April",
+    "Year": 2010,
+    "Gross": 10423686
+  },
+  {
+    "Month": "March",
+    "Year": 2010,
+    "Gross": 11165413
+  },
+  {
+    "Month": "February",
+    "Year": 2010,
+    "Gross": 6164714
+  },
+  {
+    "Month": "January",
+    "Year": 2010,
+    "Gross": 6745908
+  },
+  {
+    "Month": "December",
+    "Year": 2009,
+    "Gross": 12528451
+  },
+  {
+    "Month": "November",
+    "Year": 2009,
+    "Gross": 18837188
+  },
+  {
+    "Month": "October",
+    "Year": 2009,
+    "Gross": 15531896
+  },
+  {
+    "Month": "September",
+    "Year": 2009,
+    "Gross": 6136272
+  },
+  {
+    "Month": "August",
+    "Year": 2009,
+    "Gross": 8733860
+  },
+  {
+    "Month": "July",
+    "Year": 2009,
+    "Gross": 5847296
+  },
+  {
+    "Month": "June",
+    "Year": 2009,
+    "Gross": 20175667
+  },
+  {
+    "Month": "May",
+    "Year": 2009,
+    "Gross": 17266613
+  },
+  {
+    "Month": "April",
+    "Year": 2009,
+    "Gross": 18603520
+  },
+  {
+    "Month": "March",
+    "Year": 2009,
+    "Gross": 17245527
+  },
+  {
+    "Month": "February",
+    "Year": 2009,
+    "Gross": 11724700
+  },
+  {
+    "Month": "January",
+    "Year": 2009,
+    "Gross": 14246203
+  },
+  {
+    "Month": "December",
+    "Year": 2008,
+    "Gross": 51122798
+  },
+  {
+    "Month": "November",
+    "Year": 2008,
+    "Gross": 9893307
+  },
+  {
+    "Month": "October",
+    "Year": 2008,
+    "Gross": 15065255
+  },
+  {
+    "Month": "September",
+    "Year": 2008,
+    "Gross": 12947647
+  },
+  {
+    "Month": "August",
+    "Year": 2008,
+    "Gross": 15082090
+  },
+  {
+    "Month": "July",
+    "Year": 2008,
+    "Gross": 17751340
+  },
+  {
+    "Month": "June",
+    "Year": 2008,
+    "Gross": 22179732
+  },
+  {
+    "Month": "May",
+    "Year": 2008,
+    "Gross": 49474642
+  },
+  {
+    "Month": "April",
+    "Year": 2008,
+    "Gross": 23138916
+  },
+  {
+    "Month": "March",
+    "Year": 2008,
+    "Gross": 18837766
+  },
+  {
+    "Month": "February",
+    "Year": 2008,
+    "Gross": 18388095
+  },
+  {
+    "Month": "January",
+    "Year": 2008,
+    "Gross": 21031101
+  },
+  {
+    "Month": "December",
+    "Year": 2007,
+    "Gross": 21458590
+  },
+  {
+    "Month": "November",
+    "Year": 2007,
+    "Gross": 11717352
+  },
+  {
+    "Month": "October",
+    "Year": 2007,
+    "Gross": 17019049
+  },
+  {
+    "Month": "September",
+    "Year": 2007,
+    "Gross": 14819034
+  },
+  {
+    "Month": "August",
+    "Year": 2007,
+    "Gross": 40505546
+  },
+  {
+    "Month": "July",
+    "Year": 2007,
+    "Gross": 20811768
+  },
+  {
+    "Month": "June",
+    "Year": 2007,
+    "Gross": 23016758
+  },
+  {
+    "Month": "May",
+    "Year": 2007,
+    "Gross": 27986637
+  },
+  {
+    "Month": "April",
+    "Year": 2007,
+    "Gross": 29688708
+  },
+  {
+    "Month": "March",
+    "Year": 2007,
+    "Gross": 18297231
+  },
+  {
+    "Month": "February",
+    "Year": 2007,
+    "Gross": 20722196
+  },
+  {
+    "Month": "January",
+    "Year": 2007,
+    "Gross": 60743620
+  },
+  {
+    "Month": "December",
+    "Year": 2006,
+    "Gross": 29469118
+  },
+  {
+    "Month": "November",
+    "Year": 2006,
+    "Gross": 24493556
+  },
+  {
+    "Month": "October",
+    "Year": 2006,
+    "Gross": 52641397
+  },
+  {
+    "Month": "September",
+    "Year": 2006,
+    "Gross": 12464781
+  },
+  {
+    "Month": "August",
+    "Year": 2006,
+    "Gross": 22965364
+  },
+  {
+    "Month": "July",
+    "Year": 2006,
+    "Gross": 29714007
+  },
+  {
+    "Month": "June",
+    "Year": 2006,
+    "Gross": 24626718
+  },
+  {
+    "Month": "May",
+    "Year": 2006,
+    "Gross": 38730976
+  },
+  {
+    "Month": "April",
+    "Year": 2006,
+    "Gross": 35435158
+  },
+  {
+    "Month": "March",
+    "Year": 2006,
+    "Gross": 53123253
+  },
+  {
+    "Month": "February",
+    "Year": 2006,
+    "Gross": 20134244
+  },
+  {
+    "Month": "January",
+    "Year": 2006,
+    "Gross": 31854776
+  },
+  {
+    "Month": "December",
+    "Year": 2005,
+    "Gross": 17546656
+  },
+  {
+    "Month": "November",
+    "Year": 2005,
+    "Gross": 27628265
+  },
+  {
+    "Month": "October",
+    "Year": 2005,
+    "Gross": 23450388
+  },
+  {
+    "Month": "September",
+    "Year": 2005,
+    "Gross": 12035705
+  },
+  {
+    "Month": "August",
+    "Year": 2005,
+    "Gross": 23168443
+  },
+  {
+    "Month": "July",
+    "Year": 2005,
+    "Gross": 24385147
+  },
+  {
+    "Month": "June",
+    "Year": 2005,
+    "Gross": 51038781
+  },
+  {
+    "Month": "May",
+    "Year": 2005,
+    "Gross": 25929349
+  },
+  {
+    "Month": "April",
+    "Year": 2005,
+    "Gross": 25009659
+  },
+  {
+    "Month": "March",
+    "Year": 2005,
+    "Gross": 29404585
+  },
+  {
+    "Month": "February",
+    "Year": 2005,
+    "Gross": 15817084
+  },
+  {
+    "Month": "January",
+    "Year": 2005,
+    "Gross": 28112340
+  },
+  {
+    "Month": "December",
+    "Year": 2004,
+    "Gross": 28435985
+  },
+  {
+    "Month": "November",
+    "Year": 2004,
+    "Gross": 15299501
+  },
+  {
+    "Month": "October",
+    "Year": 2004,
+    "Gross": 21664358
+  },
+  {
+    "Month": "September",
+    "Year": 2004,
+    "Gross": 22077955
+  },
+  {
+    "Month": "August",
+    "Year": 2004,
+    "Gross": 56771493
+  },
+  {
+    "Month": "July",
+    "Year": 2004,
+    "Gross": 26671855
+  },
+  {
+    "Month": "June",
+    "Year": 2004,
+    "Gross": 32741882
+  },
+  {
+    "Month": "May",
+    "Year": 2004,
+    "Gross": 30779766
+  },
+  {
+    "Month": "April",
+    "Year": 2004,
+    "Gross": 19059361
+  },
+  {
+    "Month": "March",
+    "Year": 2004,
+    "Gross": 25151568
+  },
+  {
+    "Month": "February",
+    "Year": 2004,
+    "Gross": 25839582
+  },
+  {
+    "Month": "January",
+    "Year": 2004,
+    "Gross": 63069140
+  },
+  {
+    "Month": "December",
+    "Year": 2003,
+    "Gross": 24382252
+  },
+  {
+    "Month": "November",
+    "Year": 2003,
+    "Gross": 37050748
+  },
+  {
+    "Month": "October",
+    "Year": 2003,
+    "Gross": 7548668
+  },
+  {
+    "Month": "September",
+    "Year": 2003,
+    "Gross": 12116219
+  },
+  {
+    "Month": "August",
+    "Year": 2003,
+    "Gross": 17356426
+  },
+  {
+    "Month": "July",
+    "Year": 2003,
+    "Gross": 13825995
+  },
+  {
+    "Month": "June",
+    "Year": 2003,
+    "Gross": 21656332
+  },
+  {
+    "Month": "May",
+    "Year": 2003,
+    "Gross": 18258238
+  },
+  {
+    "Month": "April",
+    "Year": 2003,
+    "Gross": 42181650
+  },
+  {
+    "Month": "March",
+    "Year": 2003,
+    "Gross": 19650934
+  },
+  {
+    "Month": "February",
+    "Year": 2003,
+    "Gross": 19079430
+  },
+  {
+    "Month": "January",
+    "Year": 2003,
+    "Gross": 27125759
+  },
+  {
+    "Month": "December",
+    "Year": 2002,
+    "Gross": 20075748
+  },
+  {
+    "Month": "November",
+    "Year": 2002,
+    "Gross": 29468193
+  },
+  {
+    "Month": "October",
+    "Year": 2002,
+    "Gross": 10270418
+  },
+  {
+    "Month": "September",
+    "Year": 2002,
+    "Gross": 14789905
+  },
+  {
+    "Month": "August",
+    "Year": 2002,
+    "Gross": 18402639
+  },
+  {
+    "Month": "July",
+    "Year": 2002,
+    "Gross": 20698562
+  },
+  {
+    "Month": "June",
+    "Year": 2002,
+    "Gross": 16589499
+  },
+  {
+    "Month": "May",
+    "Year": 2002,
+    "Gross": 14960589
+  },
+  {
+    "Month": "April",
+    "Year": 2002,
+    "Gross": 40827664
+  },
+  {
+    "Month": "March",
+    "Year": 2002,
+    "Gross": 20794240
+  },
+  {
+    "Month": "February",
+    "Year": 2002,
+    "Gross": 10750577
+  },
+  {
+    "Month": "January",
+    "Year": 2002,
+    "Gross": 17960304
+  },
+  {
+    "Month": "December",
+    "Year": 2001,
+    "Gross": 41188686
+  },
+  {
+    "Month": "November",
+    "Year": 2001,
+    "Gross": 36585459
+  },
+  {
+    "Month": "October",
+    "Year": 2001,
+    "Gross": 25725329
+  },
+  {
+    "Month": "September",
+    "Year": 2001,
+    "Gross": 18826655
+  },
+  {
+    "Month": "August",
+    "Year": 2001,
+    "Gross": 26165213
+  },
+  {
+    "Month": "July",
+    "Year": 2001,
+    "Gross": 51493308
+  },
+  {
+    "Month": "June",
+    "Year": 2001,
+    "Gross": 32025535
+  },
+  {
+    "Month": "May",
+    "Year": 2001,
+    "Gross": 40059362
+  },
+  {
+    "Month": "April",
+    "Year": 2001,
+    "Gross": 55405764
+  },
+  {
+    "Month": "March",
+    "Year": 2001,
+    "Gross": 40064547
+  },
+  {
+    "Month": "February",
+    "Year": 2001,
+    "Gross": 11895611
+  },
+  {
+    "Month": "January",
+    "Year": 2001,
+    "Gross": 40102702
+  },
+  {
+    "Month": "December",
+    "Year": 2000,
+    "Gross": 2981215
+  },
+  {
+    "Month": "November",
+    "Year": 2000,
+    "Gross": 2229079
+  },
+  {
+    "Month": "October",
+    "Year": 2000,
+    "Gross": 2942712
+  },
+  {
+    "Month": "September",
+    "Year": 2000,
+    "Gross": 3166818
+  },
+  {
+    "Month": "August",
+    "Year": 2000,
+    "Gross": 4585505
+  },
+  {
+    "Month": "July",
+    "Year": 2000,
+    "Gross": 8182995
+  },
+  {
+    "Month": "June",
+    "Year": 2000,
+    "Gross": 11022380
+  },
+  {
+    "Month": "May",
+    "Year": 2000,
+    "Gross": 14304555
+  },
+  {
+    "Month": "April",
+    "Year": 2000,
+    "Gross": 20907539
+  },
+  {
+    "Month": "March",
+    "Year": 2000,
+    "Gross": 11041776
+  },
+  {
+    "Month": "February",
+    "Year": 2000,
+    "Gross": 10453609
+  },
+  {
+    "Month": "January",
+    "Year": 2000,
+    "Gross": 20302240
+  },
+  {
+    "Month": "December",
+    "Year": 1999,
+    "Gross": 170091
+  },
+  {
+    "Month": "November",
+    "Year": 1999,
+    "Gross": 1044718
+  },
+  {
+    "Month": "October",
+    "Year": 1999,
+    "Gross": 2353833
+  },
+  {
+    "Month": "September",
+    "Year": 1999,
+    "Gross": 1871984
+  },
+  {
+    "Month": "August",
+    "Year": 1999,
+    "Gross": 5865473
+  },
+  {
+    "Month": "July",
+    "Year": 1999,
+    "Gross": 6064375
+  },
+  {
+    "Month": "June",
+    "Year": 1999,
+    "Gross": 10433513
+  },
+  {
+    "Month": "May",
+    "Year": 1999,
+    "Gross": 16603649
+  },
+  {
+    "Month": "April",
+    "Year": 1999,
+    "Gross": 13828774
+  },
+  {
+    "Month": "March",
+    "Year": 1999,
+    "Gross": 10189323
+  },
+  {
+    "Month": "February",
+    "Year": 1999,
+    "Gross": 10858556
+  },
+  {
+    "Month": "January",
+    "Year": 1999,
+    "Gross": 18908397
+  },
+  {
+    "Month": "December",
+    "Year": 1998,
+    "Gross": 2597449
+  },
+  {
+    "Month": "November",
+    "Year": 1998,
+    "Gross": 2702341
+  },
+  {
+    "Month": "October",
+    "Year": 1998,
+    "Gross": 841533
+  },
+  {
+    "Month": "September",
+    "Year": 1998,
+    "Gross": 198055
+  },
+  {
+    "Month": "August",
+    "Year": 1998,
+    "Gross": 5873984
+  },
+  {
+    "Month": "July",
+    "Year": 1998,
+    "Gross": 5753350
+  },
+  {
+    "Month": "June",
+    "Year": 1998,
+    "Gross": 8998759
+  },
+  {
+    "Month": "May",
+    "Year": 1998,
+    "Gross": 13954675
+  },
+  {
+    "Month": "April",
+    "Year": 1998,
+    "Gross": 11043812
+  },
+  {
+    "Month": "March",
+    "Year": 1998,
+    "Gross": 10835750
+  },
+  {
+    "Month": "February",
+    "Year": 1998,
+    "Gross": 8451403
+  },
+  {
+    "Month": "January",
+    "Year": 1998,
+    "Gross": 11251395
+  },
+   {
+    "Month": "December",
+    "Year": 1997,
+    "Gross": 357961
+  },
+  {
+    "Month": "November",
+    "Year": 1997,
+    "Gross": 357961
+  },
+  {
+    "Month": "October",
+    "Year": 1997,
+    "Gross": 2069224
+  },
+  {
+    "Month": "September",
+    "Year": 1997,
+    "Gross": 1942335
+  },
+  {
+    "Month": "August",
+    "Year": 1997,
+    "Gross": 4260644
+  },
+  {
+    "Month": "July",
+    "Year": 1997,
+    "Gross": 6109383
+  },
+  {
+    "Month": "June",
+    "Year": 1997,
+    "Gross": 14345204
+  },
+  {
+    "Month": "May",
+    "Year": 1997,
+    "Gross": 14314294
+  },
+  {
+    "Month": "April",
+    "Year": 1997,
+    "Gross": 14272875
+  },
+  {
+    "Month": "March",
+    "Year": 1997,
+    "Gross": 11360569
+  },
+  {
+    "Month": "February",
+    "Year": 1997,
+    "Gross": 6336279
+  },
+  {
+    "Month": "January",
+    "Year": 1997,
+    "Gross": 7788406
+  },
+  {
+    "Month": "December",
+    "Year": 1996,
+    "Gross": 6784597
+  },
+  {
+    "Month": "November",
+    "Year": 1996,
+    "Gross": 1184972
+  },
+  {
+    "Month": "October",
+    "Year": 1996,
+    "Gross": 2200912
+  },
+  {
+    "Month": "September",
+    "Year": 1996,
+    "Gross": 2747618
+  },
+  {
+    "Month": "August",
+    "Year": 1996,
+    "Gross": 2455730
+  },
+  {
+    "Month": "July",
+    "Year": 1996,
+    "Gross": 3650125
+  },
+  {
+    "Month": "June",
+    "Year": 1996,
+    "Gross": 8063212
+  },
+  {
+    "Month": "May",
+    "Year": 1996,
+    "Gross": 8221743
+  },
+  {
+    "Month": "April",
+    "Year": 1996,
+    "Gross": 8817663
+  },
+  {
+    "Month": "March",
+    "Year": 1996,
+    "Gross": 6984212
+  },
+  {
+    "Month": "February",
+    "Year": 1996,
+    "Gross": 2971783
+  },
+  {
+    "Month": "January",
+    "Year": 1996,
+    "Gross": 4510444
+  },
+  {
+    "Month": "December",
+    "Year": 1995,
+    "Gross": 4385625
+  },
+  {
+    "Month": "November",
+    "Year": 1995,
+    "Gross": 4832003
+  },
+  {
+    "Month": "October",
+    "Year": 1995,
+    "Gross": 4403400
+  },
+  {
+    "Month": "September",
+    "Year": 1995,
+    "Gross": 2449312
+  },
+  {
+    "Month": "August",
+    "Year": 1995,
+    "Gross": 3757005
+  },
+  {
+    "Month": "July",
+    "Year": 1995,
+    "Gross": 8500916
+  },
+  {
+    "Month": "June",
+    "Year": 1995,
+    "Gross": 9689983
+  },
+  {
+    "Month": "May",
+    "Year": 1995,
+    "Gross": 10787960
+  },
+  {
+    "Month": "April",
+    "Year": 1995,
+    "Gross": 13223278
+  },
+  {
+    "Month": "March",
+    "Year": 1995,
+    "Gross": 8935050
+  },
+  {
+    "Month": "February",
+    "Year": 1995,
+    "Gross": 6324546
+  },
+  {
+    "Month": "January",
+    "Year": 1995,
+    "Gross": 10830021
+  },
+  {
+    "Month": "December",
+    "Year": 1994,
+    "Gross": 515283
+  },
+  {
+    "Month": "November",
+    "Year": 1994,
+    "Gross": 228173
+  },
+  {
+    "Month": "October",
+    "Year": 1994,
+    "Gross": 532966
+  },
+  {
+    "Month": "September",
+    "Year": 1994,
+    "Gross": 460191
+  },
+  {
+    "Month": "August",
+    "Year": 1994,
+    "Gross": 903294
+  },
+  {
+    "Month": "July",
+    "Year": 1994,
+    "Gross": 1683506
+  },
+  {
+    "Month": "June",
+    "Year": 1994,
+    "Gross": 3966120
+  },
+  {
+    "Month": "May",
+    "Year": 1994,
+    "Gross": 7724646
+  },
+  {
+    "Month": "April",
+    "Year": 1994,
+    "Gross": 5155798
+  },
+  {
+    "Month": "March",
+    "Year": 1994,
+    "Gross": 3633083
+  },
+  {
+    "Month": "February",
+    "Year": 1994,
+    "Gross": 4021852
+  },
+  {
+    "Month": "January",
+    "Year": 1994,
+    "Gross": 7329401
+  },
+  {
+    "Month": "December",
+    "Year": 1993,
+    "Gross": 1668955
+  },
+  {
+    "Month": "November",
+    "Year": 1993,
+    "Gross": 2981278
+  },
+  {
+    "Month": "October",
+    "Year": 1993,
+    "Gross": 1386016
+  },
+  {
+    "Month": "September",
+    "Year": 1993,
+    "Gross": 1367480
+  },
+  {
+    "Month": "August",
+    "Year": 1993,
+    "Gross": 7119241
+  },
+  {
+    "Month": "July",
+    "Year": 1993,
+    "Gross": 6145233
+  },
+  {
+    "Month": "June",
+    "Year": 1993,
+    "Gross": 5685449
+  },
+  {
+    "Month": "May",
+    "Year": 1993,
+    "Gross": 8988743
+  },
+  {
+    "Month": "April",
+    "Year": 1993,
+    "Gross": 9628486
+  },
+  {
+    "Month": "March",
+    "Year": 1993,
+    "Gross": 7513566
+  },
+  {
+    "Month": "February",
+    "Year": 1993,
+    "Gross": 6054231
+  },
+  {
+    "Month": "January",
+    "Year": 1993,
+    "Gross": 9416194
+  },
+  {
+    "Month": "December",
+    "Year": 1992,
+    "Gross": 230445
+  },
+  {
+    "Month": "November",
+    "Year": 1992,
+    "Gross": 897588
+  },
+  {
+    "Month": "October",
+    "Year": 1992,
+    "Gross": 2088639
+  },
+  {
+    "Month": "September",
+    "Year": 1992,
+    "Gross": 2095184
+  },
+  {
+    "Month": "August",
+    "Year": 1992,
+    "Gross": 5805098
+  },
+  {
+    "Month": "July",
+    "Year": 1992,
+    "Gross": 6802531
+  },
+  {
+    "Month": "June",
+    "Year": 1992,
+    "Gross": 9123300
+  },
+  {
+    "Month": "May",
+    "Year": 1992,
+    "Gross": 11558803
+  },
+  {
+    "Month": "April",
+    "Year": 1992,
+    "Gross": 12083207
+  },
+  {
+    "Month": "March",
+    "Year": 1992,
+    "Gross": 8919083
+  },
+  {
+    "Month": "February",
+    "Year": 1992,
+    "Gross": 4630607
+  },
+  {
+    "Month": "January",
+    "Year": 1992,
+    "Gross": 4557158
+  },
+  {
+    "Month": "December",
+    "Year": 1991,
+    "Gross": 1368407
+  },
+  {
+    "Month": "November",
+    "Year": 1991,
+    "Gross": 2248080
+  },
+  {
+    "Month": "October",
+    "Year": 1991,
+    "Gross": 1626420
+  },
+  {
+    "Month": "September",
+    "Year": 1991,
+    "Gross": 275977
+  },
+  {
+    "Month": "August",
+    "Year": 1991,
+    "Gross": 275977
+  },
+  {
+    "Month": "July",
+    "Year": 1991,
+    "Gross": 1461862
+  },
+  {
+    "Month": "June",
+    "Year": 1991,
+    "Gross": 3607883
+  },
+  {
+    "Month": "May",
+    "Year": 1991,
+    "Gross": 4360915
+  },
+  {
+    "Month": "April",
+    "Year": 1991,
+    "Gross": 4956713
+  },
+  {
+    "Month": "March",
+    "Year": 1991,
+    "Gross": 5968941
+  },
+  {
+    "Month": "February",
+    "Year": 1991,
+    "Gross": 5751695
+  },
+  {
+    "Month": "January",
+    "Year": 1991,
+    "Gross": 8105694
+  },
+  {
+    "Month": "December",
+    "Year": 1990,
+    "Gross": 1732108
+  },
+  {
+    "Month": "November",
+    "Year": 1990,
+    "Gross": 1510608
+  },
+  {
+    "Month": "October",
+    "Year": 1990,
+    "Gross": 2051250
+  },
+  {
+    "Month": "September",
+    "Year": 1990,
+    "Gross": 2205694
+  },
+  {
+    "Month": "August",
+    "Year": 1990,
+    "Gross": 4017034
+  },
+  {
+    "Month": "July",
+    "Year": 1990,
+    "Gross": 4843948
+  },
+  {
+    "Month": "June",
+    "Year": 1990,
+    "Gross": 5166860
+  },
+  {
+    "Month": "May",
+    "Year": 1990,
+    "Gross": 6806491
+  },
+  {
+    "Month": "April",
+    "Year": 1990,
+    "Gross": 10614982
+  },
+  {
+    "Month": "March",
+    "Year": 1990,
+    "Gross": 6481042
+  },
+  {
+    "Month": "February",
+    "Year": 1990,
+    "Gross": 6856388
+  },
+  {
+    "Month": "January",
+    "Year": 1990,
+    "Gross": 7083550
+  },
+  {
+    "Month": "December",
+    "Year": 1989,
+    "Gross": 4954848
+  },
+  {
+    "Month": "November",
+    "Year": 1989,
+    "Gross": 4931336
+  },
+  {
+    "Month": "October",
+    "Year": 1989,
+    "Gross": 5367268
+  },
+  {
+    "Month": "September",
+    "Year": 1989,
+    "Gross": 3226406
+  },
+  {
+    "Month": "August",
+    "Year": 1989,
+    "Gross": 5181063
+  },
+  {
+    "Month": "July",
+    "Year": 1989,
+    "Gross": 5410604
+  },
+  {
+    "Month": "June",
+    "Year": 1989,
+    "Gross": 5829780
+  },
+  {
+    "Month": "May",
+    "Year": 1989,
+    "Gross": 6875030
+  },
+  {
+    "Month": "April",
+    "Year": 1989,
+    "Gross": 9214929
+  },
+  {
+    "Month": "March",
+    "Year": 1989,
+    "Gross": 7599945
+  },
+  {
+    "Month": "February",
+    "Year": 1989,
+    "Gross": 6809069
+  },
+  {
+    "Month": "January",
+    "Year": 1989,
+    "Gross": 11639238
+  },
+  {
+    "Month": "December",
+    "Year": 1988,
+    "Gross": 213943
+  },
+  {
+    "Month": "November",
+    "Year": 1988,
+    "Gross": 577678
+  },
+  {
+    "Month": "October",
+    "Year": 1988,
+    "Gross": 1001661
+  },
+  {
+    "Month": "September",
+    "Year": 1988,
+    "Gross": 668178
+  },
+  {
+    "Month": "August",
+    "Year": 1988,
+    "Gross": 1073709
+  },
+  {
+    "Month": "July",
+    "Year": 1988,
+    "Gross": 2627542
+  },
+  {
+    "Month": "June",
+    "Year": 1988,
+    "Gross": 5152373
+  },
+  {
+    "Month": "May",
+    "Year": 1988,
+    "Gross": 9090806
+  },
+  {
+    "Month": "April",
+    "Year": 1988,
+    "Gross": 6630860
+  },
+  {
+    "Month": "March",
+    "Year": 1988,
+    "Gross": 5271170
+  },
+  {
+    "Month": "February",
+    "Year": 1988,
+    "Gross": 4363784
+  },
+  {
+    "Month": "January",
+    "Year": 1988,
+    "Gross": 8178782
+  },
+  {
+    "Month": "December",
+    "Year": 1987,
+    "Gross": 113552
+  },
+  {
+    "Month": "November",
+    "Year": 1987,
+    "Gross": 2897927
+  },
+  {
+    "Month": "October",
+    "Year": 1987,
+    "Gross": 3652704
+  },
+  {
+    "Month": "September",
+    "Year": 1987,
+    "Gross": 3655935
+  },
+  {
+    "Month": "August",
+    "Year": 1987,
+    "Gross": 5385374
+  },
+  {
+    "Month": "July",
+    "Year": 1987,
+    "Gross": 4340505
+  },
+  {
+    "Month": "June",
+    "Year": 1987,
+    "Gross": 5010096
+  },
+  {
+    "Month": "May",
+    "Year": 1987,
+    "Gross": 8004653
+  },
+  {
+    "Month": "April",
+    "Year": 1987,
+    "Gross": 6863831
+  },
+  {
+    "Month": "March",
+    "Year": 1987,
+    "Gross": 7148315
+  },
+  {
+    "Month": "February",
+    "Year": 1987,
+    "Gross": 5285278
+  },
+  {
+    "Month": "January",
+    "Year": 1987,
+    "Gross": 6709667
+  },
+  {
+    "Month": "December",
+    "Year": 1986,
+    "Gross": 35000
+  },
+  {
+    "Month": "November",
+    "Year": 1986,
+    "Gross": 1577688
+  },
+  {
+    "Month": "October",
+    "Year": 1986,
+    "Gross": 2286740
+  },
+  {
+    "Month": "September",
+    "Year": 1986,
+    "Gross": 2998855
+  },
+  {
+    "Month": "August",
+    "Year": 1986,
+    "Gross": 4040225
+  },
+  {
+    "Month": "July",
+    "Year": 1986,
+    "Gross": 2097472
+  },
+  {
+    "Month": "June",
+    "Year": 1986,
+    "Gross": 5005824
+  },
+  {
+    "Month": "May",
+    "Year": 1986,
+    "Gross": 5975073
+  },
+  {
+    "Month": "April",
+    "Year": 1986,
+    "Gross": 6239259
+  },
+  {
+    "Month": "March",
+    "Year": 1986,
+    "Gross": 6804474
+  },
+  {
+    "Month": "February",
+    "Year": 1986,
+    "Gross": 6203324
+  },
+  {
+    "Month": "January",
+    "Year": 1986,
+    "Gross": 7329498
+  },
+  {
+    "Month": "December",
+    "Year": 1985,
+    "Gross": 607016
+  },
+  {
+    "Month": "November",
+    "Year": 1985,
+    "Gross": 958390
+  },
+  {
+    "Month": "October",
+    "Year": 1985,
+    "Gross": 1284654
+  },
+  {
+    "Month": "September",
+    "Year": 1985,
+    "Gross": 881724
+  },
+  {
+    "Month": "August",
+    "Year": 1985,
+    "Gross": 1672150
+  },
+  {
+    "Month": "July",
+    "Year": 1985,
+    "Gross": 2942087
+  },
+  {
+    "Month": "June",
+    "Year": 1985,
+    "Gross": 7502344
+  },
+  {
+    "Month": "May",
+    "Year": 1985,
+    "Gross": 8046792
+  },
+  {
+    "Month": "April",
+    "Year": 1985,
+    "Gross": 8564941
+  },
+  {
+    "Month": "March",
+    "Year": 1985,
+    "Gross": 10475016
+  },
+  {
+    "Month": "February",
+    "Year": 1985,
+    "Gross": 7766749
+  },
+  {
+    "Month": "January",
+    "Year": 1985,
+    "Gross": 8774484
+  }
+]
+  },selection:{highlight:{type:'single'}},
+
+ 
+  mark: {type:'rect',strokeWidth:1},
+  encoding: {
+    x: {field: 'Year', type: 'ordinal'},
+    y: {field: 'Month', type: 'nominal',
+    sort:['January','February','March','April','May','June','July','August','September','October','November','December']},
+    
+    color: {field:'Gross', type:'quantitative'},
+    
+        stroke:{condition:{test:{and:[{selection:'highlight'},'length(data(\'highlight_store\'))']},value:'orange'},value:null},
+    
+    opacity:{
+    condition:{selection:'highlight', value: 1},
+    value:0.8},
+     order:{condition:{selection:'highlight', value:1}, value:0},
+
+    
+    tooltip:[{field:'Gross', type:'quantitative'}]
+  }
+};
+      vegaEmbed('#vis', yourVlSpec,{theme: 'ggplot2'});
+    </script>
+  </body>
+</html>
